@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 4: Spreadsheets | Portfolio</title>
+  <meta name="description" content="LinkedIn Learning Excel courses and a spreadsheet I built for my project.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="container"><a class="brand" href="index.html">Portfolio</a></div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <header class="page-head">
+        <span class="page-num" aria-hidden="true">04</span>
+        <h1><span class="visually-hidden">Task 4: </span>Spreadsheets</h1>
+        <p class="lead">Completion of the LinkedIn Learning Excel courses, and a spreadsheet I built for my project with my own formulas, lookup functions and charts.</p>
+      </header>
+
+      <nav class="toc" data-toc aria-label="On this page"></nav>
+
+      <section class="section" aria-labelledby="evidence">
+        <h2 id="evidence">Evidence: LinkedIn Learning courses</h2>
+        <p><strong>Evidence:</strong> I completed three LinkedIn Learning courses on Excel, about 6.5 hours of learning in total. Each certificate is shown below (click to enlarge).</p>
+        <div class="table-wrap">
+          <table>
+            <caption class="visually-hidden">LinkedIn Learning courses completed</caption>
+            <thead><tr><th scope="col">Course</th><th scope="col">Completed</th><th scope="col">Length</th><th scope="col">Skills covered</th></tr></thead>
+            <tbody>
+              <tr><td>Excel Boot Camp</td><td>5 September 2026</td><td>3 h 46 min</td><td>Microsoft Excel</td></tr>
+              <tr><td>Excel Data Visualization: Mastering 20+ Charts and Graphs</td><td>5 September 2026</td><td>2 h 23 min</td><td>Data visualisation, Microsoft Excel</td></tr>
+              <tr><td>Excel: Power Query for Beginners</td><td>5 September 2026</td><td>26 min</td><td>Microsoft Power Query, Microsoft Excel</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence">
+            <img src="assets/images/linkedin-excel-boot-camp.png" width="1020" height="748" alt="LinkedIn Learning certificate: Excel Boot Camp learning path, completed 5 September 2026, 3 hours 46 minutes" loading="lazy">
+            <figcaption><strong>Evidence:</strong> Completion of the <em>Excel Boot Camp</em> learning path.</figcaption>
+          </figure>
+          <figure class="evidence">
+            <img src="assets/images/linkedin-excel-data-visualization.png" width="1023" height="770" alt="LinkedIn Learning certificate: Excel Data Visualization: Mastering 20+ Charts and Graphs, completed 5 September 2026, 2 hours 23 minutes" loading="lazy">
+            <figcaption><strong>Evidence:</strong> Completion of <em>Excel Data Visualization: Mastering 20+ Charts and Graphs</em>.</figcaption>
+          </figure>
+          <figure class="evidence">
+            <img src="assets/images/linkedin-excel-power-query.png" width="1037" height="785" alt="LinkedIn Learning certificate: Excel: Power Query for Beginners, completed 5 September 2026, 26 minutes" loading="lazy">
+            <figcaption><strong>Evidence:</strong> Completion of <em>Excel: Power Query for Beginners</em>.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="spreadsheet">
+        <h2 id="spreadsheet">My project spreadsheet</h2>
+        <h3>Project context</h3>
+        <p>Our group, Viridus Machina, investigated whether algae grown in photobioreactors could help reduce Swinburne&rsquo;s carbon footprint by capturing CO<sub>2</sub> on campus (&ldquo;insetting&rdquo;) rather than relying on carbon offsets. Algae such as <em>Chlorella vulgaris</em> need enough light to grow well, so I built this spreadsheet to analyse daily solar exposure from the Scotch College weather station, about a kilometre from campus, from January to September 2026. It lets me look up any day or month, summarises each month, rates each day&rsquo;s solar exposure, and charts how light levels change through the year.</p>
+        <h3>What it includes</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Element</th><th scope="col">Where (sheet and cell)</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+              <tr><td>A formula I wrote</td><td>Lookup sheet, &ldquo;Difference from month average&rdquo;</td><td><code>=IF(ISNUMBER(B10),B10-B13,"No data")</code> subtracts the month&rsquo;s average from the chosen day&rsquo;s solar exposure, e.g. +4.6&nbsp;MJ/m&sup2; for 15 March 2026</td></tr>
+              <tr><td>Standard functions</td><td>Lookup sheet</td><td>XLOOKUP and VLOOKUP to look up any day or month, and MAX and MIN inside XLOOKUP to find the sunniest and cloudiest days, e.g. <code>=XLOOKUP(MAX(Data!$E$2:$E$245),Data!$E$2:$E$245,Data!$A$2:$A$245)</code></td></tr>
+              <tr><td>Charts</td><td>Charts area</td><td>Daily solar exposure (line), days by rating (bar), and monthly average, highest and lowest (column); see below</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence">
+            <img src="assets/images/spreadsheet-formula.png" width="1204" height="561" alt="Lookup sheet showing each result next to the function and formula used: looking up a day, a month and the whole dataset with VLOOKUP, XLOOKUP, IFERROR, MAX and MIN" loading="lazy">
+            <figcaption><strong>Evidence:</strong> My Lookup sheet, with each result shown next to the function and formula I wrote for it, including my own formula and the VLOOKUP, XLOOKUP, MAX and MIN functions.</figcaption>
+          </figure>
+          <figure class="evidence">
+            <img src="assets/images/spreadsheet-monthly-summary.png" width="707" height="241" alt="Monthly Summary table for January to September 2026: season, days recorded, average, total, highest and lowest solar exposure, sunniest day and average rating" loading="lazy">
+            <figcaption><strong>Evidence:</strong> My Monthly Summary sheet, summarising 244 days of solar exposure by month.</figcaption>
+          </figure>
+          <figure class="evidence">
+            <img src="assets/images/spreadsheet-lookup-tables.png" width="946" height="290" alt="Lookup Tables sheet mapping each month to its season and number of days, and solar exposure thresholds to ratings from Very Low to Very High" loading="lazy">
+            <figcaption><strong>Evidence:</strong> My Lookup Tables sheet, which maps months to seasons and sorts solar exposure into rating bands for approximate-match lookups.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="chart">
+        <h2 id="chart">Project chart</h2>
+        <figure class="evidence">
+          <img src="assets/images/spreadsheet-charts.png" width="1465" height="622" alt="Three charts: daily solar exposure from January to September 2026 (line), days by rating (bar), and monthly average, highest and lowest solar exposure from January to August (column)" loading="lazy">
+          <figcaption><strong>Evidence:</strong> My three charts. The main one for this task is <em>Monthly Average, Highest and Lowest (Jan&ndash;Aug)</em>, bottom right.</figcaption>
+        </figure>
+        <dl class="fields">
+          <dt>What it shows</dt><dd>The average, highest and lowest daily solar exposure for each month from January to August 2026</dd>
+          <dt>Data source</dt><dd>Bureau of Meteorology daily solar exposure, Scotch College weather station, 1 January to 1 September 2026 (244 days)</dd>
+          <dt>Chart type</dt><dd>Clustered column chart</dd>
+          <dt>Why this type</dt><dd>It makes it easy to compare months side by side</dd>
+          <dt>Axes</dt><dd>x = month; y = daily solar exposure (MJ/m&sup2;), with a legend for highest, average and lowest</dd>
+        </dl>
+        <p>The chart let us visualise how solar exposure changes through the year and determine some of the variables for the project. Average daily solar exposure fell from 26.0&nbsp;MJ/m&sup2; in January to 6.7&nbsp;MJ/m&sup2; in June. From late April to mid-August, almost every day fell below what <em>Chlorella vulgaris</em> needs to grow well, so a rooftop photobioreactor would need LED lighting to top up the sunshine.</p>
+      </section>
+
+      <section class="section" aria-labelledby="reflection">
+        <h2 id="reflection">Reflection</h2>
+        <!-- Guidance: personal and critical, using "I" statements. Say what you learned, what you enjoyed, what was challenging, and how this has been / will be useful. -->
+        <div class="star">
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">S</span>Situation</h3>
+            <p>Before this unit, I was already fairly comfortable with spreadsheets. I knew how to use formulas, sort data and make basic charts, and my start-of-unit digital skills quiz rated my Excel experience as Competent.</p>
+          </div>
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">T</span>Task</h3>
+            <p>Our project needed us to handle a large dataset, summarise it and draw conclusions from it. I needed to complete the LinkedIn Learning Excel courses and build my own spreadsheet analysing solar exposure for the project.</p>
+          </div>
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">A</span>Action</h3>
+            <p>Much of the LinkedIn Learning content was revision for me. The main adjustment was getting used to Excel after mostly using Google Sheets.</p>
+            <p>When building my project spreadsheet, the hardest parts were handling dates outside my data, which I solved with IFERROR so the lookups return &ldquo;No data&rdquo; instead of an error, and keeping my charts readable, since the daily line chart has 244 dates crowding its axis.</p>
+          </div>
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">R</span>Result</h3>
+            <p>The most useful new skill I learnt was using lookup functions.</p>
+            <p>I used VLOOKUP and XLOOKUP throughout my project spreadsheet, including approximate-match lookups that sort each day&rsquo;s solar exposure into a rating band.</p>
+          </div>
+          <div class="star-card star-note">
+            <h3>What I&rsquo;d do differently / next</h3>
+            <p>In future, I expect to use spreadsheets for data and lab work in astrophysics, for quick analysis before moving to Python for bigger jobs, and for personal tracking, like my <a href="sustainability.html">sustainability log</a>.</p>
+            <p>Next, I&rsquo;d like to learn more Power Query for cleaning and importing large datasets, how to use pivot tables, and statistics functions such as trendlines and regression for lab data.</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="pager" id="pager" aria-label="Previous and next task"></nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span data-year></span> <span data-site="name"></span> &middot; <span data-site="unit"></span> &middot; <span data-site="university"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

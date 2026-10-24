@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task 1: Research (Turnitin) | Portfolio</title>
+  <meta name="description" content="My research paper on the carbon footprint of computing, submitted through Turnitin.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="container"><a class="brand" href="index.html">Portfolio</a></div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <header class="page-head">
+        <span class="page-num" aria-hidden="true">01</span>
+        <h1><span class="visually-hidden">Task 1: </span>Research (Turnitin)</h1>
+        <p class="lead">Background research into the carbon footprint of computing, checked through Turnitin and revised to reduce the similarity score.</p>
+      </header>
+
+      <nav class="toc" data-toc aria-label="On this page"></nav>
+
+      <section class="section" aria-labelledby="evidence">
+        <h2 id="evidence">Evidence</h2>
+        <div class="evidence-grid">
+          <figure class="evidence">
+            <img src="assets/images/turnitin-first.png" width="874" height="114" alt="Canvas submission of NPS_Week2Paper_final3.pdf with a Turnitin similarity score of 4.0%" loading="lazy">
+            <figcaption><strong>Evidence:</strong> First Turnitin check of my paper, with a similarity score of 4.0%. This shows the paper was submitted through Turnitin.</figcaption>
+          </figure>
+          <figure class="evidence">
+            <img src="assets/images/turnitin-final.png" width="838" height="113" alt="Canvas submission of NPS_Week2Paper_final3-1.pdf with a Turnitin similarity score of 1.0%" loading="lazy">
+            <figcaption><strong>Evidence:</strong> Final Turnitin check after revising the paper, with the similarity score reduced to 1.0%.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="research">
+        <h2 id="research">Background research</h2>
+        <p class="paper-meta"><cite>Computing and Its Carbon Footprint</cite> &middot; August 2026</p>
+        <h3>1. Background</h3>
+        <p>It’s easy to forget that computing has a physical footprint at all. Every search, stream, or AI-generated image is running on a data center somewhere, and those data centers eat up electricity, water, and raw materials at a rate that’s no longer trivial (Stax Engineering, 2025). A decade ago this might have seemed like a minor side-effect of modern life, something not worth thinking too hard about. That’s changed. As more of daily life moves online and AI tools become part of everyday routines, the infrastructure behind them keeps expanding, and so does its cost. But this isn’t just about electricity used while something is running. A surprising amount of computing’s carbon output actually comes from building the hardware in the first place, not from using it (Gupta et al., 2021), which complicates the usual story people tell about “clean” computing. This paper looks at that footprint from a few angles: what gets emitted during production, what gets emitted through everyday use and AI training, and why the whole thing is so hard to actually measure.</p>
+        <h3>2. Emissions from production</h3>
+        <p>When people picture computing’s environmental impact, they usually think of electricity: a laptop plugged in overnight, or a data center humming away 24/7. But a lot of the damage is already done before a device is even switched on. Building a chip, a phone, or a server means mining raw materials, refining them, and running factories that are themselves energy-intensive, often across multiple countries before a single component reaches final assembly. In fact, research suggests this manufacturing stage often produces more emissions than the device will over its entire working life (Gupta et al., 2021). This is especially true for smaller devices like phones and laptops, since people tend to replace them fairly often, sometimes every couple of years, which means starting the whole manufacturing process over again rather than simply keeping something running longer. So even a computer running on 100% renewable electricity isn’t carbon-neutral, not really; it was never that clean to begin with. Clean energy alone doesn’t fix this problem. Production deserves just as much scrutiny as usage does, if not more, given how easy it is to overlook.</p>
+        <h3>3. Emissions from AI training and inference</h3>
+        <p>Before getting into AI specifically, it’s worth remembering that computing’s day-to-day electricity use is already substantial on its own. Data centers were responsible for 1.5% of electricity use around the world in 2024, and that number is expected to more than double by the year 2030 (Spowart, 2026). Some of that growth is generic, driven by streaming, cloud storage, and everyday browsing, but a lot of it is increasingly tied to AI, which helps explain why one recent estimate put data center emissions at 286 million tons of CO<sub>2</sub> in 2025 alone (Zinin, 2026).</p>
+        <p>Training the large AI models behind tools like chatbots and image generators is one of the more energy-hungry corners of modern computing. Before a model can do anything useful, it has to be trained on enormous amounts of data, often for weeks at a time across thousands of processors running in parallel, all of which draw significant power the entire time. One estimate put the cost of training GPT-3, a 175-billion-parameter model, at around 1,287 megawatt-hours of electricity and roughly 502 metric tons of carbon, about the same as driving 112 petrol cars for a year (State of the Planet, 2023). What’s less obvious is that training isn’t even the bigger half of the problem. Once a model is actually released, it has to answer millions of queries every day, and this “inference” stage can end up burning through more energy overall than training ever did (State of the Planet, 2023). That’s a hard thing to picture at first, since a single question typed into a chatbot feels weightless, but multiplied across millions of users asking questions every hour, it adds up fast. In other words, the environmental cost doesn’t stop once the model is finished; if anything, it just keeps compounding the more popular the tool becomes.</p>
+        <h3>4. Difficulty in measuring data</h3>
+        <p>There is, however, a small problem, no one is entirely sure of the real number. Companies are not always transparent about how much electricity their data centers draw or where that power actually comes from, so researchers are often left estimating rather than measuring directly (Lannelongue &amp; Inouye, 2023). On top of that, studies don’t agree on what counts. Some only tally the electricity used mid-task; others fold in manufacturing, cooling, or the energy wasted while hardware just sits idle (Gupta et al., 2021). Even the assumptions behind these estimates, like which power grid a data center draws from, or how efficiently a specific facility is run, can shift the final number quite a bit. That’s a big part of why you’ll see wildly different figures for something as specific as training one AI model. Without more consistent reporting, it’s hard to say how big this problem really is, let alone whether current efforts to shrink it are working.</p>
+        <h3>5. Conclusion</h3>
+        <p>Computing’s carbon footprint turns out to be a lot messier than it first looks. It’s not just the electricity running through devices and data centers; it’s the manufacturing behind the hardware, and the training and daily use of AI systems on top of that. None of these pieces can really be solved on their own, and treating “switch to renewables” as a fix-all misses most of the picture. Getting a fuller picture probably means better reporting from the companies running this infrastructure, and a bit more awareness from everyone else about what’s actually happening behind the screen. As computing, and AI in particular, keeps growing, getting a clearer and more honest picture of its impact is only going to matter more.</p>
+      </section>
+
+      <section class="section" aria-labelledby="similarity">
+        <h2 id="similarity">Reducing the similarity score</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Submission</th><th scope="col">Similarity score</th></tr></thead>
+            <tbody>
+              <tr><td>First check</td><td>4.0%</td></tr>
+              <tr><td>Final check</td><td>1.0%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>My first check came back at 4.0%, which was already low. I reworded the sentences Turnitin flagged so they were more clearly in my own words, and made a few other small edits. The final version came back at 1.0%.</p>
+      </section>
+
+      <section class="section" aria-labelledby="reflection">
+        <h2 id="reflection">Reflection</h2>
+        <!-- Guidance: personal and critical, using "I" statements. Say what you learned, what you enjoyed, what was challenging, and how this has been / will be useful. -->
+        <div class="star">
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">S</span>Situation</h3>
+            <p>In Week 2 of NPS10003, I wrote a short research paper on the carbon footprint of computing, which I submitted through Turnitin.</p>
+          </div>
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">T</span>Task</h3>
+            <p>I needed to research the topic using a range of sources, write the background in my own words with in-text citations and a reference list, and then use Turnitin&rsquo;s similarity report to revise the paper and reduce its similarity score.</p>
+          </div>
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">A</span>Action</h3>
+            <p>I found my sources through Google Scholar, general Google searches, and by following links in articles I was already reading. The hardest parts were paraphrasing ideas in my own words without sticking too closely to the original wording, and getting the referencing right. After my first Turnitin check came back at 4.0%, I reworded the sentences it had flagged and made a few small edits.</p>
+          </div>
+          <div class="star-card">
+            <h3><span class="letter" aria-hidden="true">R</span>Result</h3>
+            <p>My final similarity score was 1.0%. I learned a lot about the topic itself, especially that manufacturing, not just electricity use, makes up much of computing&rsquo;s footprint. I also got better at referencing and at reading a Turnitin similarity report.</p>
+            <p>These skills will help with later assignments in my degree, and with finding and citing papers for research and lab reports in astrophysics.</p>
+          </div>
+          <div class="star-card star-note">
+            <h3>What I&rsquo;d do differently / next</h3>
+            <p>Next time, I would rely more on peer-reviewed academic sources and less on web articles, and start earlier so I have more time to revise before the Turnitin check.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="references">
+        <h2 id="references">References</h2>
+        <ul class="references">
+          <li>Gupta, U., Kim, Y. G., Lee, S., Tse, J., Lee, H.-H. S., Wei, G.-Y., Brooks, D., &amp; Wu, C.-J. (2021). Chasing carbon: The elusive environmental footprint of computing. <em>2021 IEEE International Symposium on High-Performance Computer Architecture (HPCA)</em>, 854&ndash;867. <a href="https://ieeexplore.ieee.org/document/9407142">https://ieeexplore.ieee.org/document/9407142</a></li>
+          <li>Lannelongue, L., &amp; Inouye, M. (2023). Carbon footprint estimation for computational research. <em>Nature Reviews Methods Primers, 3</em>, 9. <a href="https://www.nature.com/articles/s43588-023-00506-2">https://www.nature.com/articles/s43588-023-00506-2</a></li>
+          <li>Spowart, B. (2026, January). <em>The carbon footprint of data centres: Our guide</em>. <a href="https://www.seedling.earth/en-us/post/the-carbon-footprint-of-data-centres-our-guide">https://www.seedling.earth/en-us/post/the-carbon-footprint-of-data-centres-our-guide</a></li>
+          <li>State of the Planet. (2023, June). <em>AI&rsquo;s growing carbon footprint</em>. <a href="https://news.climate.columbia.edu/2023/06/09/ais-growing-carbon-footprint/">https://news.climate.columbia.edu/2023/06/09/ais-growing-carbon-footprint/</a></li>
+          <li>Stax Engineering. (2025, January). <em>The environmental impact of data centers</em>. <a href="https://www.staxengineering.com/stax-hub/the-environmental-impact-of-data-centers">https://www.staxengineering.com/stax-hub/the-environmental-impact-of-data-centers</a></li>
+          <li>Zinin, A. (2026, June). <em>Data centers may emit 57% more CO<sub>2</sub> than expected in 2025, study finds</em>. <a href="https://techxplore.com/news/2026-06-centers-emit.html">https://techxplore.com/news/2026-06-centers-emit.html</a></li>
+        </ul>
+      </section>
+
+      <nav class="pager" id="pager" aria-label="Previous and next task"></nav>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span data-year></span> <span data-site="name"></span> &middot; <span data-site="unit"></span> &middot; <span data-site="university"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
