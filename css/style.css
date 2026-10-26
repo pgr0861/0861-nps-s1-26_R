@@ -1,27 +1,18 @@
-/* ==========================================================================
-   Portfolio stylesheet: "colour blocks"
-   Each task has its own colour (set in js/site.js PAGES). On a task page the
-   script exposes it as --task / --task-ink; on cards and links as --c / --ink.
 
-   1. Tokens   2. Base   3. Header/nav   4. Page layout   5. Components
-   6. Placeholders   7. Lightbox   8. Responsive   9. Print
-   ========================================================================== */
-
-/* 1. Tokens -------------------------------------------------------------- */
 :root {
   --bg: #ffffff;
   --soft: #f4f4f1;
   --text: #141414;
   --muted: #565656;
   --line: #141414;
-  --task: #141414;        /* overridden per page by site.js */
+  --task: #141414;       
   --task-ink: #ffffff;
   --todo-bg: #fff6cc;
   --todo-line: #141414;
   --todo-text: #3d2e00;
-  --head-bg: #141414;     /* table header row */
+  --head-bg: #141414;  
   --head-text: #ffffff;
-  --sky: #0b1026;         /* night-sky hero */
+  --sky: #0b1026;       
   --max: 1040px;
   --font: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --display: "Cal Sans", var(--font);
@@ -42,10 +33,9 @@
     --head-text: #f2f2f2;
     color-scheme: dark;
   }
-  :root:not([data-task]) { --task: #f2f2f2; --task-ink: #141414; } /* home and 404 */
+  :root:not([data-task]) { --task: #f2f2f2; --task-ink: #141414; } 
 }
 
-/* 2. Base ---------------------------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; scroll-padding-top: 1.5rem; }
@@ -59,7 +49,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   -webkit-text-size-adjust: 100%;
-  font-synthesis: none; /* no faux bold: Cal Sans has one weight, Outfit loads real ones */
+  font-synthesis: none;
 }
 
 img, video, iframe { max-width: 100%; }
@@ -88,7 +78,7 @@ p, ul, ol, table, figure { margin: 0 0 1rem; }
 
 .container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
 
-/* 3. Header / nav -------------------------------------------------------- */
+
 .site-header { position: relative; z-index: 50; background: var(--bg); border-bottom: 2px solid var(--line); }
 .site-header .container {
   display: flex; align-items: center; justify-content: space-between;
@@ -107,7 +97,7 @@ p, ul, ol, table, figure { margin: 0 0 1rem; }
   border: 2px solid var(--line); padding: 0.35rem 0.8rem; cursor: pointer;
 }
 
-/* Desktop: a row of task numbers underlined in their colours; the name shows on hover */
+
 .site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 0.3rem; }
 .site-nav .nav-home { display: none; }
 .site-nav a {
@@ -128,10 +118,8 @@ p, ul, ol, table, figure { margin: 0 0 1rem; }
 .site-nav a:hover .nlabel, .site-nav a:focus-visible .nlabel { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .site-nav .nlabel { transition: none; } }
 
-/* 4. Page layout --------------------------------------------------------- */
 main { padding: 2.5rem 0 3rem; }
 
-/* Task page header: a solid block in the task's colour with a big number */
 .page-head {
   background: var(--task); color: var(--task-ink);
   padding: 2rem 2rem 1.75rem;
@@ -154,7 +142,6 @@ main { padding: 2.5rem 0 3rem; }
 .section { border-top: 3px solid var(--line); padding: 1.5rem 0 1rem; margin-bottom: 1.5rem; }
 .section > :last-child { margin-bottom: 0; }
 
-/* "Jump to" chips */
 .toc { margin-bottom: 2rem; }
 .toc h2 { font-family: var(--font); font-size: 0.95rem; font-weight: 500; margin: 0 0 0.5rem; color: var(--muted); }
 .toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -165,7 +152,6 @@ main { padding: 2.5rem 0 3rem; }
 .toc a:hover { background: var(--task); color: var(--task-ink); border-color: var(--task); }
 .toc:empty { display: none; }
 
-/* Prev / next: blocks in the neighbouring tasks' colours */
 .pager { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2.5rem; }
 .pager a {
   display: block; padding: 1.1rem 1.25rem;
@@ -178,9 +164,6 @@ main { padding: 2.5rem 0 3rem; }
 
 .site-footer { border-top: 3px solid var(--line); padding: 1.5rem 0; color: var(--muted); font-size: 0.9rem; }
 
-/* 5. Components ---------------------------------------------------------- */
-
-/* Home and 404: night-sky hero */
 .hero {
   position: relative; overflow: hidden;
   display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center;
@@ -240,23 +223,19 @@ main { padding: 2.5rem 0 3rem; }
 .task-card:hover h3 { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.15em; }
 .task-card .num { font-family: var(--display); font-weight: 400; font-size: 2.6rem; line-height: 1; letter-spacing: -0.01em; }
 .task-card h3 { margin: auto 0 0; font-size: 1.25rem; }
-/* The final project ("P") tile spans the full row under the task tiles */
 .task-grid li.project { grid-column: 1 / -1; }
 .task-grid li.project .task-card { min-height: 0; flex-direction: row; align-items: center; gap: 1.25rem; }
 .task-grid li.project .task-card h3 { margin: 0; }
-
-/* The project's colour is white, so give it an outline wherever it could vanish into a white page */
 .task-grid li.project .task-card,
 :root[data-task="P"] .page-head,
 .pager a[href="project.html"] { box-shadow: inset 0 0 0 3px var(--line); }
 .site-nav a[href="project.html"] { border-bottom-color: var(--line); }
 .site-nav a[href="project.html"][aria-current="page"] { box-shadow: inset 0 0 0 2px var(--line); }
 
-/* Evidence figures */
+
 .evidence-grid { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 1rem; }
 figure.evidence { margin: 0 0 1.25rem; border: 2px solid var(--line); background: var(--soft); }
 .evidence-grid figure.evidence { margin: 0; }
-/* Never upscale small screenshots; cap tall ones (the lightbox shows them full size) */
 figure.evidence img { max-height: 75vh; margin: 0 auto; cursor: zoom-in; }
 figure.evidence > .placeholder { margin: 0.75rem; }
 figure.evidence figcaption { padding: 0.75rem 1rem; font-size: 0.95rem; border-top: 2px solid var(--line); background: var(--bg); }
@@ -264,7 +243,6 @@ figure.evidence figcaption strong:first-child {
   background: var(--task); color: var(--task-ink); padding: 0.05rem 0.4rem; margin-right: 0.2rem;
 }
 
-/* STAR reflection: stacked in reading order, letter in the left margin */
 .star { margin-bottom: 0; }
 .star-card {
   position: relative; padding: 0 0 1.25rem 3rem; margin-bottom: 1.25rem;
@@ -280,7 +258,6 @@ figure.evidence figcaption strong:first-child {
 .star-card.star-note { margin-bottom: 0; padding: 1rem 1.25rem; border-bottom: 0; border-left: 6px solid var(--task); background: var(--soft); }
 .star-card.star-note + .star-note { margin-top: 0.75rem; }
 
-/* Buttons, tables, video, references */
 .btn {
   display: inline-flex; align-items: center; gap: 0.4rem;
   padding: 0.55rem 1rem; border: 2px solid var(--line);
@@ -319,7 +296,6 @@ dl.fields dd { margin: 0; }
 .speaker ol li { margin-bottom: 0.4rem; }
 .speaker > :last-child { margin-bottom: 0; }
 
-/* 6. Placeholders -------------------------------------------------------- */
 .placeholder {
   display: block;
   background: var(--todo-bg); color: var(--todo-text);
@@ -337,7 +313,6 @@ span.placeholder { display: inline; padding: 0.05rem 0.35rem; margin: 0; border-
 .placeholder ul, .placeholder ol { margin: 0.4rem 0 0; padding-left: 1.25rem; }
 .placeholder > :last-child { margin-bottom: 0; }
 
-/* 7. Lightbox ------------------------------------------------------------ */
 .lightbox { border: 0; padding: 0; background: transparent; max-width: 95vw; max-height: 95vh; }
 .lightbox::backdrop { background: rgb(0 0 0 / 0.88); }
 .lightbox img { max-width: 95vw; max-height: 85vh; width: auto; margin: 0 auto; }
@@ -348,13 +323,12 @@ span.placeholder { display: inline; padding: 0.05rem 0.35rem; margin: 0; border-
   font-size: 1.4rem; line-height: 1; cursor: pointer;
 }
 
-/* 8. Responsive ---------------------------------------------------------- */
 @media (max-width: 900px) {
   .task-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .task-grid li:last-child:nth-child(odd) { grid-column: 1 / -1; } /* odd tile count: last one spans */
+  .task-grid li:last-child:nth-child(odd) { grid-column: 1 / -1; } 
   .hero { grid-template-columns: 1fr; min-height: 0; gap: 0.5rem; }
   .constellation { width: 100%; max-width: 30rem; justify-self: center; }
-  html { scroll-padding-top: 5rem; } /* clear the sticky header */
+  html { scroll-padding-top: 5rem; } 
   .site-header { position: sticky; top: 0; }
   .site-header .container { min-height: 3.5rem; }
   .nav-toggle { display: inline-block; }
@@ -375,7 +349,7 @@ span.placeholder { display: inline; padding: 0.05rem 0.35rem; margin: 0; border-
   .site-nav a:hover, .site-nav a:focus-visible { background: none; text-decoration: underline; }
   .site-nav a[aria-current="page"] { background: none; color: var(--text); font-weight: 700; }
   .site-nav a[href="project.html"][aria-current="page"] { box-shadow: none; }
-  .site-nav a[href="project.html"] .nnum { box-shadow: inset 0 0 0 2px var(--line); } /* white square needs an edge */
+  .site-nav a[href="project.html"] .nnum { box-shadow: inset 0 0 0 2px var(--line); }
   .site-nav .nnum {
     display: inline-grid; place-items: center; min-width: 1.6rem; height: 1.6rem;
     background: var(--c); color: var(--ink); font-family: var(--display); font-size: 0.85rem;
@@ -395,7 +369,6 @@ span.placeholder { display: inline; padding: 0.05rem 0.35rem; margin: 0; border-
   dl.fields dd { margin-bottom: 0.5rem; }
 }
 
-/* 9. Print --------------------------------------------------------------- */
 @media print {
   :root { --bg: #fff; --soft: #f4f4f4; --text: #000; --muted: #333; --line: #000; }
   body { font-size: 11pt; }

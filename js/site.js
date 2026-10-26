@@ -1,8 +1,3 @@
-/* Shared site script: header nav, home task grid and constellation, starfield,
-   "Jump to" box, prev/next links and image lightbox.
-   The task list lives ONLY in PAGES below - edit it here and every page updates.
-   colour = the task's block colour, ink = text colour that reads on top of it. */
-
 const SITE = {
   name: "Pavel Gorfunkel",
   unit: "NPS10003: Sustainability Challenges in Science",
@@ -25,20 +20,17 @@ const PAGES = [
 ];
 
 (function () {
-  // GitHub Pages serves "sustainability.html" and "sustainability" alike; "/" is home.
   const slug = (location.pathname.split("/").pop() || "index").toLowerCase().replace(/\.html$/, "");
   const idx = PAGES.findIndex((p) => p.file.replace(/\.html$/, "") === slug); // -1 on the 404 page
   const page = PAGES[idx] || {};
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
-  // Values still in [square brackets] are shown as TO DO placeholders.
   const isTodo = (s) => /^\[.*\]$/.test(s);
   const fill = (s) => (isTodo(s) ? `<span class="placeholder">${esc(s)}</span>` : esc(s));
   const pad = (n) => (typeof n === "number" ? String(n).padStart(2, "0") : n); // "P" stays "P"
   const kind = (p) => (typeof p.num === "number" ? `Task ${p.num}` : "Project");
   const vars = (p) => (p.colour ? `--c:${p.colour};--ink:${p.ink}` : "");
 
-  /* This page's colour, used by the CSS as --task / --task-ink */
   if (page.colour) {
     const root = document.documentElement;
     root.dataset.task = page.num;
@@ -47,7 +39,6 @@ const PAGES = [
   }
   if (!isTodo(SITE.name)) document.title = document.title.replace(/\| Portfolio$/, `| ${SITE.name}`);
 
-  /* Header + mobile menu */
   const header = document.getElementById("site-header");
   if (header) {
     const brand = isTodo(SITE.name) ? "My portfolio" : `${esc(SITE.name)} <span>/ portfolio</span>`;
@@ -77,13 +68,11 @@ const PAGES = [
     });
   }
 
-  /* Site name / unit wherever data-site="name|unit|university" appears */
   document.querySelectorAll("[data-site]").forEach((el) => {
     const v = SITE[el.dataset.site];
     if (v) el.innerHTML = fill(v);
   });
 
-  /* Home page task grid */
   const grid = document.getElementById("task-grid");
   if (grid) {
     grid.innerHTML = PAGES.filter((p) => p.num).map((p) => `
@@ -93,7 +82,6 @@ const PAGES = [
       </a></li>`).join("");
   }
 
-  /* "Jump to" contents box, built from each section's h2 */
   const toc = document.querySelector("[data-toc]");
   if (toc) {
     const heads = [...document.querySelectorAll("main .section > h2[id]")];
@@ -103,7 +91,6 @@ const PAGES = [
     }
   }
 
-  /* Prev / next links, each in its own task's colour */
   const pager = document.getElementById("pager");
   if (pager && idx > 0) {
     const link = (p, cls, small) => `<a class="${cls}" href="${p.file}" style="${vars(p)}"><small>${small}</small>${
@@ -113,7 +100,6 @@ const PAGES = [
     pager.innerHTML = link(prev, "prev", "&larr; Previous") + link(next, "next", PAGES[idx + 1] ? "Next &rarr;" : "Back to");
   }
 
-  /* Home: the tasks as a constellation. Positions are % of the box, in task order.
      Decorative (the container is aria-hidden), so the stars are mouse-only links. */
   const con = document.getElementById("constellation");
   if (con) {
@@ -129,12 +115,10 @@ const PAGES = [
         </a>`).join("");
   }
 
-  /* Starfield: twinkling stars in real stellar colours, plus the odd shooting star */
   const sky = document.querySelector(".starfield");
   if (sky && sky.getContext) {
     const ctx = sky.getContext("2d");
     const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    // Rough blackbody colours: O/B blue-white through K/M orange, mostly white-ish
     const tints = ["#ffffff", "#ffffff", "#ffffff", "#cad7ff", "#9bb0ff", "#fff4ea", "#ffd2a1", "#ffad51"];
     let w = 0, h = 0, stars = [], shoot = null, nextShoot = 0, raf = 0, visible = true;
 
@@ -191,10 +175,8 @@ const PAGES = [
     }
   }
 
-  /* Footer year */
   document.querySelectorAll("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 
-  /* Lightbox for evidence images */
   const imgs = document.querySelectorAll("figure.evidence img");
   if (imgs.length && typeof HTMLDialogElement === "function") {
     const box = document.createElement("dialog");
