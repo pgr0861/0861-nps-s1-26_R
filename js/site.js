@@ -100,7 +100,6 @@ const PAGES = [
     pager.innerHTML = link(prev, "prev", "&larr; Previous") + link(next, "next", PAGES[idx + 1] ? "Next &rarr;" : "Back to");
   }
 
-     Decorative (the container is aria-hidden), so the stars are mouse-only links. */
   const con = document.getElementById("constellation");
   if (con) {
     const pts = [[10, 72], [24, 50], [37, 63], [45, 38], [58, 22], [71, 36], [65, 60], [79, 76], [91, 55], [86, 22], [70, 6]];
